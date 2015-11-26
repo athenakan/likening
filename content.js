@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
 
 var like = document.getElementsByTagName('a');
 console.log(like);
-/*var likes = [];
+/*var likes = []; lklkh
 // Select only the Like buttons.
 for (var i = 0; i < like.length; i++) {
     if (like[i] && (like[i].title == 'Like this comment' || like[i].title == 'Like this item' || like[i].title == 'Like this')) {
