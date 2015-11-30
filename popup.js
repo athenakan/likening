@@ -19,7 +19,10 @@ window.addEventListener('DOMContentLoaded', function(){
         });
 });
 
-
+document.getElementById('submit').addEventListener('click',function(){
+    var input1= document.getElementById('input1').value;
+    chrome.tabs.update({url: "https://facebook.com/"+input1});
+});
 
 
 /*function main() {

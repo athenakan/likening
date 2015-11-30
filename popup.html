@@ -1,25 +1,42 @@
 <html>
 <script src="popup.js"></script>
 <style>
-    body {
-        min-width: 357px;
-        overflow-x: hidden;
-        background-color: #ffffff;
+    body 
+    {
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 13px;
+        max-height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
     
-    #likeTally {
-        font-family: Helvetica, Arial, Georgia;
+    #likeTally 
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
         line-height: 24px;
         color: #3c3c3c;
     }
-    
-    a {
-        color: #478ad0;
+
+    #input1
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        line-height: 15px;
+        color: #3c3c3c;
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 12px;
+        max-height: 300px;    
     }
-    
-    a:hover {
-        color: #ff0053;
-    }
+
+    #submit
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        color: #3c3c3c;
+        font-size: 12px;
+    }    
+
 </style>
  
 <body id="popup">
@@ -29,5 +46,11 @@
         </p>
     </div>
 </body>
+  <body style="width: 300px">
+    <div>Friend's Name: <input type="text" id="input1"></input></div>
+    
+    <button id="submit">Submit</button>
+    <script type="text/javascript" src="popup.js"></script>
+  </body>
  
-</html>
+</html> 
