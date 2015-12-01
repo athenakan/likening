@@ -2,7 +2,7 @@ function setLikesInfo(info)
 {
     document.getElementById('button').style.visibility = 'visible'; 
     document.getElementById('words').textContent = "This is the number of likes: "; 
-    document.getElementById('total').textContent = info.length; 
+    document.getElementById('total').textContent = info; 
     console.log(info); 
     console.log("there");
    
@@ -37,7 +37,8 @@ function jumpScroll()
 window.addEventListener('DOMContentLoaded', function(){
     // send message to contentscript in selected tab
     document.getElementById('total').textContent = ""; 
-    document.getElementById('button').style.visibility = 'hidden';  
+    document.getElementById('button').style.visibility = 'hidden';
+
     document.getElementById('like_button').onclick = function()
     {
        chrome.tabs.query({
@@ -67,6 +68,36 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
 
+    }
+    document.getElementById('like_comment').onclick = function () 
+    {
+        chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    },
+        function(tabs)
+        {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                {from: 'popup', subject: 'Like Comments'},
+                setLikesInfo
+                );
+        }); 
+    }
+    document.getElementById('like_post').onclick = function () 
+    {
+        chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    },
+        function(tabs)
+        {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                {from: 'popup', subject: 'Like Posts'},
+                setLikesInfo
+                );
+        }); 
     }
     /*chrome.tabs.query({
         active: true,

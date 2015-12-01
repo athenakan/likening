@@ -1,39 +1,80 @@
+var likeall = []; 
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
     if ((msg.from === 'popup') && (msg.subject === 'Like All'))
     {
         //var like = document.getElementsByTagName('a').getElementsByClassName("_48-k UFILikeLink")[0];
         var like = document.getElementsByTagName('a'); 
         var likes = []; 
-        var likeall = []; 
+       // var likeall = []; 
+        likeall = []; 
         var count = 0; 
         for (var i = 0; i < like.length; i++)
         {
-            /*if (like[i] && (like[i].title == 'Like this comment' || like[i].title == 'Like this item' || like[i].title == 'Like this')) 
-            {
-                likes[i] = i;
-            }*/
             if (like[i] && like[i].title == 'Like this comment')
             {
                 //like[i].click(); 
                 likeall[count] = like[i];
-                likes[count] = like[i].title; 
+                likes[count] = like[i]; 
                 count++; 
             }
             else if (like[i] && like[i].getAttribute("aria-label") == 'Like this')
             {
                 //like[i].click(); 
                 likeall[count] = like[i]; 
-                likes[count] = "Like this"; 
+                likes[count] = like[i]; 
                 count ++; 
             }
         }
-        cliking(likeall);
-        response(likes);
+        cliking(likes);
+        response(count);
         return true;
+    }
+    else if ((msg.from === 'popup') && (msg.subject === 'Like Comments'))
+    {
+        var like = document.getElementsByTagName('a'); 
+        var likecomments = []; 
+        likeall = []; 
+        var count = 0; 
+        for (var i = 0; i < like.length; i++)
+        {
+            if (like[i] && like[i].title == 'Like this comment')
+            {
+                //like[i].click(); 
+                likecomments[count] = like[i];
+                likeall[count] = like[i]; 
+                count++; 
+            }
+        }
+        cliking(likecomments);
+        //cliking(likeall);
+        response(count);  
+        return true; 
+    }
+    else if ((msg.from === 'popup') && (msg.subject === 'Like Posts'))
+    {
+        var like = document.getElementsByTagName('a'); 
+        var likeposts = []; 
+        likeall = []; 
+        var count = 0; 
+        for (var i = 0; i < like.length; i++)
+        {
+            if (like[i] && like[i].getAttribute("aria-label") == 'Like this')
+            {
+                //like[i].click(); 
+                //likeposts[count] = like[i];
+                likeall[count] = like[i]; 
+                likeposts[count] = like[i]; 
+                count++; 
+            }
+        }
+        cliking(likeposts); 
+        //cliking(likeall);
+        response(count); 
+        return true; 
     }
     else if ((msg.from === 'popup') && (msg.subject === 'Unlike'))
     {
-        var unlike = document.getElementsByTagName('a'); 
+       /* var unlike = document.getElementsByTagName('a'); 
         var unlikes = []; 
         var c = 0; 
         for (var i = 0; i < unlike.length; i++)
@@ -52,6 +93,8 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
             }
         }
         cliking(unlikes);
+        */
+        cliking(likeall);
         response();        
         return true; 
     }
