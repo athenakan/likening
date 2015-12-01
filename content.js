@@ -1,5 +1,5 @@
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
-    if ((msg.from === 'popup') && (msg.subject === 'Likes'))
+    if ((msg.from === 'popup') && (msg.subject === 'Like All'))
     {
         //var like = document.getElementsByTagName('a').getElementsByClassName("_48-k UFILikeLink")[0];
         var like = document.getElementsByTagName('a'); 
@@ -54,7 +54,12 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
         cliking(unlikes);
         response();        
         return true; 
-    }               
+    }
+    /*else if ((msg.from === 'popup') && (msg.subject === 'Like All'))
+    {
+        response(); 
+    }*/
+
 });
 
 function cliking (likeall)

@@ -1,8 +1,10 @@
 function setLikesInfo(info)
 {
+    document.getElementById('button').style.visibility = 'visible'; 
     document.getElementById('total').textContent = info.length; 
     console.log(info); 
     console.log("there");
+   
     document.getElementById('button').onclick = function()
     {
        chrome.tabs.query({
@@ -28,7 +30,23 @@ function setTest()
 
 window.addEventListener('DOMContentLoaded', function(){
     // send message to contentscript in selected tab
-    chrome.tabs.query({
+    document.getElementById('button').style.visibility = 'hidden';  
+    document.getElementById('like_button').onclick = function()
+    {
+       chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    },
+        function(tabs)
+        {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                {from: 'popup', subject: 'Like All'},
+                setLikesInfo
+                );
+        }); 
+    }
+    /*chrome.tabs.query({
         active: true,
         currentWindow: true
     },
@@ -39,7 +57,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 {from: 'popup', subject: 'Likes'},
                 setLikesInfo
                 );
-        });
+        });*/
 });
 
 document.getElementById('submit').addEventListener('click',function(){
