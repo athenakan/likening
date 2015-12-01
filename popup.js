@@ -82,9 +82,24 @@ window.addEventListener('DOMContentLoaded', function(){
         });*/
 });
 
+function openSearchResult()
+{
+    chrome.tabs.executeScript({code: "document.getElementsByClassName('_gll')[0].firstChild.click();", runAt: "document_idle"});
+}
+
+
+
 document.getElementById('submit').addEventListener('click',function(){
     var input1= document.getElementById('input1').value;
     chrome.tabs.update({url: "https://facebook.com/search/top/?q="+input1});
+
+    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+        if(changeInfo.status == "complete" && tab.url.indexOf("https://www.facebook.com/search/top/?") == 0)
+        {
+            openSearchResult();
+        }
+    });
+
 });
 
 
