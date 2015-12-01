@@ -1,15 +1,77 @@
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
     if ((msg.from === 'popup') && (msg.subject === 'Likes'))
     {
-        //var button = document.getElementsByTagName('button')
-      //  var like = button.getElementsByTagName
-        response();
+        //var like = document.getElementsByTagName('a').getElementsByClassName("_48-k UFILikeLink")[0];
+        var like = document.getElementsByTagName('a'); 
+        var likes = []; 
+        var likeall = []; 
+        var count = 0; 
+        for (var i = 0; i < like.length; i++)
+        {
+            /*if (like[i] && (like[i].title == 'Like this comment' || like[i].title == 'Like this item' || like[i].title == 'Like this')) 
+            {
+                likes[i] = i;
+            }*/
+            if (like[i] && like[i].title == 'Like this comment')
+            {
+                //like[i].click(); 
+                likeall[count] = like[i];
+                likes[count] = like[i].title; 
+                count++; 
+            }
+            else if (like[i] && like[i].getAttribute("aria-label") == 'Like this')
+            {
+                //like[i].click(); 
+                likeall[count] = like[i]; 
+                likes[count] = "Like this"; 
+                count ++; 
+            }
+        }
+        cliking(likeall);
+        response(likes);
+        return true;
     }
+    else if ((msg.from === 'popup') && (msg.subject === 'Unlike'))
+    {
+        var unlike = document.getElementsByTagName('a'); 
+        var unlikes = []; 
+        var c = 0; 
+        for (var i = 0; i < unlike.length; i++)
+        {
+            if (unlike[i] && unlike[i].title == 'Unlike this comment')
+            {
+                //like[i].click(); 
+                unlikes[c] = unlike[i];
+                c++; 
+            }
+            else if (unlike[i] && unlike[i].getAttribute("aria-label") == 'Unlike this')
+            {
+                //like[i].click(); 
+                unlikes[c] = unlike[i]; 
+                c++; 
+            }
+        }
+        cliking(unlikes);
+        response();        
+        return true; 
+    }               
 });
 
+function cliking (likeall)
+{
+    if (likeall.length == 0)
+    {
+        return;
+    }
 
-var like = document.getElementsByTagName('a');
-console.log(like);
+    likeall[0].click(); 
+    cliking(likeall.splice(1));
+   /* window.setTimeout(function()
+    {
+        liking(likeall.splice(1));
+    }, 1500); */
+}
+
 /*var likes = []; lklkh
 // Select only the Like buttons.
 for (var i = 0; i < like.length; i++) {

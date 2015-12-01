@@ -1,6 +1,29 @@
-function setLikesInfo()
+function setLikesInfo(info)
 {
-    console.log("working!"); 
+    document.getElementById('total').textContent = info.length; 
+    console.log(info); 
+    console.log("there");
+    document.getElementById('button').onclick = function()
+    {
+       chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    },
+        function(tabs)
+        {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                {from: 'popup', subject: 'Unlike'},
+                setTest
+                );
+        }); 
+    }
+}
+
+function setTest()
+{
+    document.getElementById('words').textContent = "Unliking all likes"; 
+    document.getElementById('button').style.visibility = 'hidden';  
 }
 
 window.addEventListener('DOMContentLoaded', function(){
