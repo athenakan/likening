@@ -1,6 +1,7 @@
 function setLikesInfo(info)
 {
     document.getElementById('button').style.visibility = 'visible'; 
+    document.getElementById('words').textContent = "This is the number of likes: "; 
     document.getElementById('total').textContent = info.length; 
     console.log(info); 
     console.log("there");
@@ -28,8 +29,14 @@ function setTest()
     document.getElementById('button').style.visibility = 'hidden';  
 }
 
+function jumpScroll() 
+{
+    window.scroll(0,150);
+}
+
 window.addEventListener('DOMContentLoaded', function(){
     // send message to contentscript in selected tab
+    document.getElementById('total').textContent = ""; 
     document.getElementById('button').style.visibility = 'hidden';  
     document.getElementById('like_button').onclick = function()
     {
@@ -45,6 +52,21 @@ window.addEventListener('DOMContentLoaded', function(){
                 setLikesInfo
                 );
         }); 
+    }
+    document.getElementById('scroll').onclick = function()
+    {
+        chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    },
+        function(tabs)
+        {
+            chrome.tabs.sendMessage(
+                tabs[0].id,
+                {from: 'popup', subject: 'Scroll down'}
+                );
+        }); 
+
     }
     /*chrome.tabs.query({
         active: true,

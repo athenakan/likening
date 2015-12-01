@@ -55,10 +55,22 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
         response();        
         return true; 
     }
-    /*else if ((msg.from === 'popup') && (msg.subject === 'Like All'))
+    else if ((msg.from === 'popup') && (msg.subject === 'Scroll down'))
     {
-        response(); 
-    }*/
+       /* var t = 0; 
+        while (t == 0)
+        {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)
+            {
+                t = 1;
+            }
+            else
+            {
+                window.scrollTo(0, document.body.scrollHeight); 
+            }
+        }*/
+        window.scrollTo(0, document.body.scrollHeight); 
+    }
 
 });
 
