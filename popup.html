@@ -11,6 +11,13 @@
         margin-right: auto;
         text-align: center;
     }
+    
+    #likeTally 
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        line-height: 24px;
+        color: #3c3c3c;
+    }
 
     #input1
     {
@@ -31,13 +38,28 @@
     }    
 
 </style>
+ 
+<body id="popup">
+    <div id="likeTally">
+        <table> 
+            <tr>
+                <td id = "words"></td>
+                <td align="right"><span id = "total">N/A</span></td>
+            </tr>
+        </table>
+        <button id = "button" type = "button">Undo</button> 
+        <button id = "like_comment" type = "button"> Like Comments </button>
+        <button id = "like_post" type = "button" > Like Posts </button>
+        <button id = "like_button" type = "button"> Like All! </button>
+        <button id = "scroll" type = "button"> Scroll down</button>
+        <button id = "page2" type = "button" > Change page </button>
+    </div>
+</body>
   <body style="width: 300px">
     <div>Friend's Name: <input type="text" id="input1"></input></div>
     
     <button id="submit">Submit</button>
-    <button id = "page2" type = "button" > Change page </button>
     <script type="text/javascript" src="popup.js"></script>
-
   </body>
  
 </html> 
