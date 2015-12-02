@@ -17,6 +17,7 @@
         font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
         line-height: 24px;
         color: #3c3c3c;
+        list-style: none
     }
 
     #input1
@@ -27,7 +28,68 @@
         min-width: 200px;
         background: #fefefe;
         font-size: 12px;
-        max-height: 300px;    
+        max-height: 300px; 
+        list-style: none   
+    }
+
+    #like_post
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        line-height: 15px;
+        color: #3c3c3c;
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 12px;
+        max-height: 300px; 
+        list-style: none   
+    }
+
+    #like_comment
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        line-height: 15px;
+        color: #3c3c3c;
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 12px;
+        max-height: 300px; 
+        list-style: none   
+    }
+
+    #like_button
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        line-height: 15px;
+        color: #3c3c3c;
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 12px;
+        max-height: 300px; 
+        list-style: none   
+    }
+
+    #scroll
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        line-height: 15px;
+        color: #3c3c3c;
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 12px;
+        max-height: 300px; 
+        list-style: none   
+    }
+
+    #instructions
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        line-height: 15px;
+        color: #3c3c3c;
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 12px;
+        max-height: 300px; 
+        list-style: none   
     }
 
     #submit
@@ -35,10 +97,16 @@
         font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
         color: #3c3c3c;
         font-size: 12px;
+        padding: 2px;
+        list-style: none
     }    
 
 </style>
- 
+<body style="width: 300px">
+    <div>Friend's Name: <input type="text" id="input1"></input></div>
+    <button id="submit">Submit</button>
+    <script type="text/javascript" src="popup.js"></script>
+</body> 
 <body id="popup">
     <div id="likeTally">
         <table> 
@@ -47,19 +115,14 @@
                 <td align="right"><span id = "total">N/A</span></td>
             </tr>
         </table>
-        <button id = "button" type = "button">Undo</button> 
-        <button id = "like_comment" type = "button"> Like Comments </button>
-        <button id = "like_post" type = "button" > Like Posts </button>
-        <button id = "like_button" type = "button"> Like All! </button>
-        <button id = "scroll" type = "button"> Scroll down</button>
-        <button id = "page2" type = "button" > Change page </button>
+        <li><button id = "button" type = "button">Undo</button></li>
+        <li><button id = "like_comment" type = "button"> Like Comments </button></li>
+        <li><button id = "like_post" type = "button" > Like Posts </button></li>
+        <li><button id = "like_button" type = "button"> Like All! </button></li>
+        <li><button id = "scroll" type = "button"> Scroll down</button></li>
+        <li><button id = "instructions" type = "button" > Instruction </button></li>
     </div>
 </body>
-  <body style="width: 300px">
-    <div>Friend's Name: <input type="text" id="input1"></input></div>
-    
-    <button id="submit">Submit</button>
-    <script type="text/javascript" src="popup.js"></script>
-  </body>
+
  
 </html> 

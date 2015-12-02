@@ -99,10 +99,11 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-    document.getElementById('page2').onclick = function()
+    document.getElementById('instructions').onclick = function()
     {
-        chrome.windows.create({'url': 'page2.html'});
+        chrome.windows.create({'url': 'instructions.html'});
     }
+
     /*chrome.tabs.query({
         active: true,
         currentWindow: true
