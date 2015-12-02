@@ -3,42 +3,110 @@
 <style>
     body 
     {
-        min-width: 200px;
+        list-style: none;
+        margin: 0;
+        float: left;
+        max-width: 577px;
+        min-width: 300px;
         background: #fefefe;
-        font-size: 13px;
-        max-height: 300px;
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
-    }
-    
-    #likeTally 
-    {
-        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-        line-height: 24px;
-        color: #3c3c3c;
     }
 
     #input1
     {
         font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        list-style: none;
         line-height: 15px;
         color: #3c3c3c;
         min-width: 200px;
         background: #fefefe;
         font-size: 12px;
-        max-height: 300px;    
+        max-height: 300px;  
+        outline-color: #cdffff
     }
 
     #submit
     {
         font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-        color: #3c3c3c;
+        background: #3c3c3c;
         font-size: 12px;
-    }    
+        list-style: none;
+        color: #ffffff;
+        
+    }     
+    
+    #likeTally 
+    {
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        list-style: none;
+        line-height: 24px;
+        background: #ffffff;
+        padding: 20px;
 
+    }
+
+    #like_comment
+    {
+        text-align: left;
+        list-style: none;
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        background: #ffffff;
+        outline-color: #cdffff
+    }
+
+    #like_post
+    {
+        text-align: left;
+        list-style: none;
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        background: #ffffff;
+        outline-color: #cdffff
+    }
+
+    #like_button
+    {
+        text-align: left;
+        list-style: none;
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        background: #ffffff;
+        outline-color: #cdffff;
+    }
+
+    #scroll
+    {
+        text-align: left;
+        list-style: none;
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        background: #ffffff;
+        outline-color: #cdffff
+    }
+
+    #instructions
+    {
+        text-align: left;
+        list-style: none;
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        background: #ffffff;
+        outline-color: #cdffff
+    }           
 </style>
  
+  <body style="width: 200px">
+    <div>Friend's Name: <input type="text" id="input1"></input></div>
+    
+    <button id="submit">Submit</button>
+    <script type="text/javascript" src="popup.js"></script>
+  </body> 
 <body id="popup">
     <div id="likeTally">
         <table> 
@@ -47,18 +115,13 @@
                 <td align="right"><span id = "total">N/A</span></td>
             </tr>
         </table>
-        <button id = "button" type = "button">Undo</button> 
-        <button id = "like_comment" type = "button"> Like Comments </button>
-        <button id = "like_post" type = "button" > Like Posts </button>
-        <button id = "like_button" type = "button"> Like All! </button>
-        <button id = "scroll" type = "button"> Scroll down</button>
+            <button id = "button" type = "button"> Undo </button>
+            <li><button id = "like_comment" type = "button"> Like Comments </button></li>
+            <li><button id = "like_post" type = "button" > Like Posts </button></li>
+            <li><button id = "like_button" type = "button"> Like All </button></li>
+            <li><button id = "scroll" type = "button"> Scroll down </button></li>
+            <li><button id = "instructions" type = "instructions"> Instructions </button></li>   
     </div>
 </body>
-  <body style="width: 300px">
-    <div>Friend's Name: <input type="text" id="input1"></input></div>
-    
-    <button id="submit">Submit</button>
-    <script type="text/javascript" src="popup.js"></script>
-  </body>
  
 </html> 
