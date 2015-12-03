@@ -1,4 +1,4 @@
-function setLikesInfo(info)
+lfunction setLikesInfo(info)
 {
     document.getElementById('button').style.visibility = 'visible'; 
     document.getElementById('words').textContent = "This is the number of likes: "; 
@@ -98,10 +98,6 @@ window.addEventListener('DOMContentLoaded', function(){
                 setLikesInfo
                 );
         }); 
-    }
-    document.getElementById('go_back').onclick = function () 
-    {
-        window.location.href = "popup.html";
     }
     
     /*chrome.tabs.query({
