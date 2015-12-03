@@ -1,4 +1,4 @@
-lfunction setLikesInfo(info)
+function setLikesInfo(info)
 {
     document.getElementById('button').style.visibility = 'visible'; 
     document.getElementById('words').textContent = "This is the number of likes: "; 
