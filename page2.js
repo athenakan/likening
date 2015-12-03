@@ -99,7 +99,11 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-    
+    document.getElementById('go_back').onclick = function () 
+    {
+        window.location.href = "popup.html";
+    }
+
     /*chrome.tabs.query({
         active: true,
         currentWindow: true
