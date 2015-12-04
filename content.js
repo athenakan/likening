@@ -104,6 +104,15 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
         response(count); 
         return true; 
     }
+    else if ((msg.from === 'popup') && (msg.subject === 'Photos'))
+    {
+       // DROP DOWN MENU FOR "GO TO PHOTOS" AND "LIKE PHOTOS"
+    }
+    else if ((msg.from === 'popup') && (msg.subject === 'Go To Photos'))
+    {
+        document.getElementsByClassName('_6-6')[3].click();
+ 
+    }
     else if ((msg.from === 'popup') && (msg.subject === 'Like Photos'))
     {
         var like = document.getElementsByTagName('a'); 
