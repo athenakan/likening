@@ -1,0 +1,37 @@
+body 
+    {
+        min-width: 200px;
+        background: #fefefe;
+        font-size: 13px;
+        max-height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+section.flat button {
+  color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+    line-height: 15px;
+        min-width: 200px;
+        font-size: 12px;
+        max-height: 300px; 
+        list-style: none  
+
+}
+section.flat button:hover
+{
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
+}
+section.flat button:active
+{
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}   
+
+ 
