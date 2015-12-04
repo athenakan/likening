@@ -17,20 +17,29 @@ function openSearchResult()
 }
 
 
-
-document.getElementById('submit').addEventListener('click',function(){
-    var input1= document.getElementById('input1').value;
-    chrome.tabs.update({url: "https://facebook.com/search/top/?q="+input1});
-
-    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-        if(changeInfo.status == "complete" && tab.url.indexOf("https://www.facebook.com/search/top/?") == 0)
-        {
-            openSearchResult();
-        }
-    });
+document.getElementById('submit').addEventListener('keypress', function(event) 
+{
+    if (event.keyCode == 13) 
+    {
+        event.preventDefault();
+        document.getElementById('submit').click();
+    }
 
 });
 
+document.getElementById('submit').addEventListener('click',function()
+{
+    var input1= document.getElementById('input1').value;
+    chrome.tabs.update({url: "https://facebook.com/search/top/?q="+input1});
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) 
+{
+    if(changeInfo.status == "complete" && tab.url.indexOf("https://www.facebook.com/search/top/?") == 0)
+    {
+        openSearchResult();
+    }
+});
 
 /*function main() {
     // Initialization work goes here.

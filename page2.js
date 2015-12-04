@@ -103,7 +103,7 @@ window.addEventListener('DOMContentLoaded', function(){
     {
         window.location.href = "popup.html";
     }
-    
+
     /*chrome.tabs.query({
         active: true,
         currentWindow: true
