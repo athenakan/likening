@@ -1,6 +1,6 @@
 function setLikesInfo(info)
 {
-    document.getElementById('button').style.visibility = 'visible'; 
+    document.getElementById('button').style.display = 'block'; 
     document.getElementById('words').textContent = "This is the number of likes: "; 
     document.getElementById('total').textContent = info; 
     console.log(info); 
@@ -26,14 +26,14 @@ function setLikesInfo(info)
 function setTest()
 {
     document.getElementById('words').textContent = "Unliking all likes"; 
-    document.getElementById('button').style.visibility = 'hidden';  
+    document.getElementById('button').style.display = 'none';  
 }
 
 
 window.addEventListener('DOMContentLoaded', function(){
     // send message to contentscript in selected tab
     document.getElementById('total').textContent = ""; 
-    document.getElementById('button').style.visibility = 'hidden';
+    document.getElementById('button').style.display = 'none';
 
     document.getElementById('like_button').onclick = function()
     {
@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-    document.getElementById('scroll').onclick = function()
+   /* document.getElementById('scroll').onclick = function()
     {
         chrome.tabs.query({
         active: true,
@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
 
-    }
+    }*/
     document.getElementById('like_comment').onclick = function () 
     {
         chrome.tabs.query({
@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-    document.getElementById('photo').onclick = function () 
+   /* document.getElementById('photo').onclick = function () 
     {
         chrome.tabs.query({
         active: true,
@@ -109,7 +109,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 setLikesInfo
                 );
         }); 
-    }
+    }*/
     document.getElementById('go_to_photo').onclick = function () 
     {
         chrome.tabs.query({
@@ -140,10 +140,6 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-    document.getElementById('go_back').onclick = function () 
-    {
-        window.location.href = "popup.html";
-    }
 
     /*chrome.tabs.query({
         active: true,
@@ -158,4 +154,15 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         });*/
 });
+window.onload = function()
+{
+document.getElementById("photo").addEventListener("mouseover", function()
+{
+    document.getElementById("popup").style.width = "500px"; 
+}); 
 
+document.getElementById("photo").addEventListener("mouseout", function()
+{
+
+});
+}
