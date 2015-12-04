@@ -23,6 +23,7 @@
             ],
           //  "run_at": "document_idle",
             "js": [
+                "jquery-1.11.3.js",
                 "content.js"
             ]
         }

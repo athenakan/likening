@@ -29,10 +29,6 @@ function setTest()
     document.getElementById('button').style.visibility = 'hidden';  
 }
 
-function jumpScroll() 
-{
-    window.scroll(0,150);
-}
 
 window.addEventListener('DOMContentLoaded', function(){
     // send message to contentscript in selected tab
@@ -82,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 {from: 'popup', subject: 'Like Comments'},
                 setLikesInfo
                 );
-        }); 
+        });  
     }
     document.getElementById('like_post').onclick = function () 
     {

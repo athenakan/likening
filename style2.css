@@ -1,6 +1,6 @@
 body 
     {
-        min-width: 200px;
+        min-width: 400px;
         background: #fefefe;
         font-size: 13px;
         max-height: 300px;
@@ -8,6 +8,25 @@ body
         margin-right: auto;
         text-align: center;
     }
+button
+{
+  display: inline-block;
+  margin: 0 10px 0 10px;
+  padding: 5px 25px;
+  font-size: 14px;
+  font-family: bold 'Raleway', sans-serif;
+  line-height: 3.5;
+  vertical-align: bottom;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
 
 section.flat button {
   color: #fff;
@@ -16,11 +35,12 @@ section.flat button {
   border: none;
   cursor: pointer;
   font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-    line-height: 15px;
-        min-width: 200px;
+    line-height: 30px;
+        min-width: 150px;
         font-size: 12px;
         max-height: 300px; 
-        list-style: none  
+        list-style: none;
+        margin-bottom: .5cm; 
 
 }
 section.flat button:hover
@@ -33,5 +53,86 @@ section.flat button:active
   background-color: #27496d;
   text-shadow: -1px 1px #193047;
 }   
+#scroll
+{
+    position:absolute;
+    right: 50px;
+}
+#go_back
+{
+    position:absolute;
+    right: 50px;
+    bottom: 200px;
+}
+nav ul ul 
+{
+     display: none;
+}
+    nav ul li:hover > ul
+    {
+        display: block;
+    }
 
- 
+nav ul 
+{
+    background: #6496c8;
+    padding: 0px 5px;
+    border-radius: 5px;  
+    list-style: none;
+    position: relative;
+    right: 100px;
+    display: inline-table;
+}
+    nav ul:after
+    {
+        content: ""; clear: both; display: block;
+    }
+
+nav ul li {
+    float: left;
+}
+    nav ul li:hover
+    {
+        background: #346392;
+        
+    }
+        nav ul li:hover a 
+        {
+            color: #fff; 
+        }
+    nav ul li a 
+    {
+        display: block; padding: 10px 25px;
+        color: #346392; text-decoration: none;
+    }
+nav ul ul 
+{
+    background: #346392; border-radius: 0px; padding: 0;
+    position: absolute; top: 100%;
+}
+    nav ul ul li{
+        float: none; 
+        border-top: 1px solid #417db8;
+        border-bottom: 1px solid #5189c1;
+        position: relative;
+        left: 80px;
+    }
+        nav ul ul li button
+        {
+        color: #fff;
+        background-color: #346392;
+        text-shadow: -1px 1px #417cb8;
+        border: none;
+        cursor: pointer;
+        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+        min-width: 150px;
+        font-size: 12px;
+        max-height: 300px; 
+        list-style: none;
+        border-top: 1px solid #6b727c;
+        border-bottom: 1px solid #575f6a;
+        }
+            nav ul ul li button:hover
+            {
+                background: #203d5a;
+            }
