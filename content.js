@@ -107,42 +107,23 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
     else if ((msg.from === 'popup') && (msg.subject === 'Like Photos'))
     {
         var like = document.getElementsByTagName('a'); 
-            var likeposts = []; 
-                likeall = []; 
-                var count = 0; 
-
-        /*for (var i = 0; i < like.length; i++)
-        {
-            if (like[i].getAttribute('data-tab-key') == 'photos')
-            {
-                 like[i].click(); 
-            }
-        }  
-        window.scrollTo(0, document.body.scrollHeight); 
-        $(document).ready(function() 
-        {
-            for (var i = 0; i < like.length; i++)
-            {
-                if (like[i].getAttribute('name') == "Daniel's Photos")
-                {
-                     like[i].click(); 
-                }
-            }  
-        });  */
+        var likeposts = []; 
+        likeall = []; 
+        var count = 0; 
         
         for (var i = 0; i < like.length; i++)
         {
 
             if (like[i] && like[i].getAttribute('class') == "_5glz _53o _53b")
             {
-                 like[i].click(); 
+                //like[i].click(); 
                 //likeposts[count] = like[i];
                 likeall[count] = like[i]; 
                 likeposts[count] = like[i]; 
                 count++; 
             }
         }
-        // cliking(likeposts); 
+         cliking(likeposts); 
         //cliking(likeall);
         response(count); 
         return true; 
