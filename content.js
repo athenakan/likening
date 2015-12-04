@@ -2,32 +2,64 @@ var likeall = [];
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
     if ((msg.from === 'popup') && (msg.subject === 'Like All'))
     {
-        //var like = document.getElementsByTagName('a').getElementsByClassName("_48-k UFILikeLink")[0];
-        var like = document.getElementsByTagName('a'); 
-        var likes = []; 
-       // var likeall = []; 
-        likeall = []; 
-        var count = 0; 
-        for (var i = 0; i < like.length; i++)
+        // if there are more comments to be viewed
+        var comment = document.getElementsByTagName('a');
+        var comments = [];
+        var cnt = 0;
+        for (var i = 0; i < comment.length; i++)
         {
-            if (like[i] && like[i].title == 'Like this comment')
+            if (comment[i] && comment[i].getAttribute("class") == 'UFIPagerLink')
             {
-                //like[i].click(); 
-                likeall[count] = like[i];
-                likes[count] = like[i]; 
-                count++; 
+                comments[cnt] = comment[i];
+                cnt++;
             }
-            else if (like[i] && like[i].getAttribute("aria-label") == 'Like this')
+
+        }
+        cliking(comments);
+        var reply = document.getElementsByTagName('span');
+        var replies = [];
+        var cnt_reply = 0;
+        for (var i = 0; i < reply.length; i++)
+        {
+            if (reply[i] && reply[i].getAttribute("class") == 'UFIReplySocialSentenceLinkText')
             {
-                //like[i].click(); 
-                likeall[count] = like[i]; 
-                likes[count] = like[i]; 
-                count ++; 
+                replies[cnt_reply] = reply[i];
+                cnt_reply++;
             }
         }
-        cliking(likes);
-        response(count);
-        return true;
+        cliking(replies);
+
+        // begin liking
+        window.setTimeout(function()
+        {
+
+            //var like = document.getElementsByTagName('a').getElementsByClassName("_48-k UFILikeLink")[0];
+            var like = document.getElementsByTagName('a'); 
+            var likes = []; 
+           // var likeall = []; 
+            likeall = []; 
+            var count = 0; 
+            for (var i = 0; i < like.length; i++)
+            {
+                if (like[i] && like[i].title == 'Like this comment')
+                {
+                    //like[i].click(); 
+                    likeall[count] = like[i];
+                    likes[count] = like[i]; 
+                    count++; 
+                }
+                else if (like[i] && like[i].getAttribute("aria-label") == 'Like this')
+                {
+                    //like[i].click(); 
+                    likeall[count] = like[i]; 
+                    likes[count] = like[i]; 
+                    count ++; 
+                }
+            }
+            cliking(likes);
+            response(count);
+            return true;
+        }, 500);
     }
     else if ((msg.from === 'popup') && (msg.subject === 'Like Comments'))
     {
@@ -71,6 +103,42 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
         //cliking(likeall);
         response(count); 
         return true; 
+    }
+    else if ((msg.from === 'popup') && (msg.subject === 'Photos'))
+    {
+       // DROP DOWN MENU FOR "GO TO PHOTOS" AND "LIKE PHOTOS"
+    }
+    else if ((msg.from === 'popup') && (msg.subject === 'Go To Photos'))
+    {
+        document.getElementsByClassName('_6-6')[3].click();
+ 
+    }
+    else if ((msg.from === 'popup') && (msg.subject === 'Like Photos'))
+    {
+        var like = document.getElementsByTagName('a'); 
+        var likeposts = []; 
+        likeall = []; 
+        var count = 0; 
+        
+        for (var i = 0; i < like.length; i++)
+        {
+
+            if (like[i] && like[i].getAttribute('class') == "_5glz _53o _53b")
+            {
+                //like[i].click(); 
+                //likeposts[count] = like[i];
+                likeall[count] = like[i]; 
+                likeposts[count] = like[i]; 
+                count++; 
+            }
+        }
+         cliking(likeposts); 
+        //cliking(likeall);
+        response(count); 
+        return true; 
+   
+            
+      
     }
     else if ((msg.from === 'popup') && (msg.subject === 'Unlike'))
     {
