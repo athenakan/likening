@@ -16,7 +16,6 @@ function openSearchResult()
     chrome.tabs.executeScript({code: "document.getElementsByClassName('_gll')[0].firstChild.click();", runAt: "document_idle"});
 }
 
-
 document.getElementById('submit').addEventListener('keypress', function(event) 
 {
     if (event.keyCode == 13) 
