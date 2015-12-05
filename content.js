@@ -1,6 +1,6 @@
 var likeall = []; 
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
-    if ((msg.from === 'popup') && (msg.subject === 'Like All'))
+    if ((msg.from === 'popup') && (msg.subject === 'Like Posts and Comments'))
     {
         // if there are more comments to be viewed
         var comment = document.getElementsByTagName('a');
