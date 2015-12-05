@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', function(){
         {
             chrome.tabs.sendMessage(
                 tabs[0].id,
-                {from: 'popup', subject: 'Like All'},
+                {from: 'popup', subject: 'Like Posts and Comments'},
                 setLikesInfo
                 );
         }); 
