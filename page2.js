@@ -1,3 +1,4 @@
+//a function for when a "Like" button is clicked, displaying the number of likes
 function setLikesInfo(info)
 {
     document.getElementById('button').style.display = 'block'; 
@@ -23,9 +24,10 @@ function setLikesInfo(info)
     }
 }
 
+//a function for when "Undo" is clicked, displaying how many likes are being unliked.
 function setTest()
 {
-    document.getElementById('words').textContent = "Unliking all likes"; 
+    document.getElementById('words').textContent = "Unliking all likes: "; 
     document.getElementById('button').style.display = 'none';  
 }
 
@@ -35,6 +37,7 @@ window.addEventListener('DOMContentLoaded', function(){
     document.getElementById('total').textContent = ""; 
     document.getElementById('button').style.display = 'none';
 
+    //like posts and comments when "Like Posts and Comments" is clicked
     document.getElementById('like_button').onclick = function()
     {
        chrome.tabs.query({
@@ -65,6 +68,8 @@ window.addEventListener('DOMContentLoaded', function(){
         }); 
 
     }*/
+
+    //like comments when "Like Comments" is clicked
     document.getElementById('like_comment').onclick = function () 
     {
         chrome.tabs.query({
@@ -80,6 +85,8 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         });  
     }
+    
+    //like posts when "Like Posts" is clicked
     document.getElementById('like_post').onclick = function () 
     {
         chrome.tabs.query({
@@ -110,6 +117,8 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }*/
+
+    //go to page displaying friend's photos when "Go To Photos" is clicked
     document.getElementById('go_to_photo').onclick = function () 
     {
         chrome.tabs.query({
@@ -125,6 +134,8 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
+
+    //like photos when "Like Photos" is clicked
     document.getElementById('like_photo').onclick = function () 
     {
         chrome.tabs.query({
@@ -154,6 +165,8 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         });*/
 });
+
+
 window.onload = function()
 {
 document.getElementById("photo").addEventListener("mouseover", function()

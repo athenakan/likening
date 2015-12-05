@@ -11,11 +11,13 @@ window.addEventListener('DOMContentLoaded', function(){
    
 });
 
+//a function to search 
 function openSearchResult()
 {
     chrome.tabs.executeScript({code: "document.getElementsByClassName('_gll')[0].firstChild.click();", runAt: "document_idle"});
 }
 
+//allow "Enter" on the keyboard to be pressed instead of clicking "Search"
 document.getElementById('submit').addEventListener('keypress', function(event) 
 {
     if (event.keyCode == 13) 
