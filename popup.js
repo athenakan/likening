@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', function(){
    
 });
 
+//a function to search 
 function openSearchResult()
 {
     window.location.href = "page2.html"; 
@@ -18,6 +19,7 @@ function openSearchResult()
 }
 window.addEventListener('DOMContentLoaded', function(){
 
+//allow "Enter" on the keyboard to be pressed instead of clicking "Search"
 document.getElementById('submit').addEventListener('keypress', function(event) 
 {
     if (event.keyCode == 13) 

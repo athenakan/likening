@@ -10,6 +10,26 @@ body
         text-align: left;
       float: left;
     }
+
+table
+{
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 3.5;
+  vertical-align: bottom;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
 button
 {
   display: inline-block;
