@@ -154,15 +154,26 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         });*/
 });
+/*$(document).ready(function() {
+    $('.parent').click(function() {
+        $('.sub-nav').toggleClass('visible');
+        document.getElementById("popup").style.marginLeft = "150px"; 
+    });
+    document.getElementById("popup").style.marginLeft = "6px"; 
+    
+});*/
+
 window.onload = function()
 {
 document.getElementById("photo").addEventListener("mouseover", function()
 {
-    document.getElementById("popup").style.width = "500px"; 
+    document.getElementById("popup").style.marginLeft = "150px"; 
 }); 
 
-document.getElementById("photo").addEventListener("mouseout", function()
+/*document.getElementById("photo").addEventListener("mouseout", function()
 {
+    document.getElementById("popup").style.marginLeft = "6px"; 
+});*/
 
-});
+
 }

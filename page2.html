@@ -2,6 +2,7 @@
 <head>
      <link rel = "stylesheet" type = "text/css" href = "style2.css" >    
 </head>
+<script src = "jquery-1.11.3.js"></script>
 <script src="page2.js"></script>
 <body id="popup">
     <div id="likeTally">
@@ -14,15 +15,15 @@
         <nav> 
                 <ul> 
                     <li> <a href = "#"> Likes </a>
-                        <ul>
+                        <ul id = "nav">
                             <li><button id = "button" class = "button" type = "button">Undo</button></li>
                             <li> <button id = "like_comment" type = "button"> Like Comments </button></li>
                             <li><button id = "like_post" type = "button" > Like Posts </button></li>
                             <li><button id = "like_button" type = "button"> Like All! </button></li>
-                            <li><button id = "photo"> Like Photos </button>
-                                <ul>
-                                    <li><button id = "go_to_photo" type = "button" > Go To Photos </button></li>
-                                    <li><button id = "like_photo" type = "button" > Like Photos </button></li>
+                            <li><button id = "photo" class = "parent"> Like Photos </button>
+                                <ul class = "sub-nav">
+                                    <li><button id = "go_to_photo" class = "resize" type = "button" > Go To Photos </button></li>
+                                    <li><button id = "like_photo" class = "resize" type = "button" > Like Photos </button></li>
                                 </ul>
                             </li>
                         </ul>

@@ -13,8 +13,10 @@ window.addEventListener('DOMContentLoaded', function(){
 
 function openSearchResult()
 {
+    window.location.href = "page2.html"; 
     chrome.tabs.executeScript({code: "document.getElementsByClassName('_gll')[0].firstChild.click();", runAt: "document_idle"});
 }
+window.addEventListener('DOMContentLoaded', function(){
 
 document.getElementById('submit').addEventListener('keypress', function(event) 
 {
@@ -30,6 +32,7 @@ document.getElementById('submit').addEventListener('click',function()
 {
     var input1= document.getElementById('input1').value;
     chrome.tabs.update({url: "https://facebook.com/search/top/?q="+input1});
+
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) 
@@ -38,6 +41,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab)
     {
         openSearchResult();
     }
+});
+
 });
 
 /*function main() {

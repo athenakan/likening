@@ -5,9 +5,9 @@ body
         background: #fefefe;
         font-size: 13px;
         max-height: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+        margin-left: 6px;
+        margin-right: -80px;
+        text-align: left;
       float: left;
     }
 button
@@ -125,5 +125,5 @@ nav ul ul
             }
 nav ul ul ul 
 {
-  position: absolute; left: 100%; top:0; 
+  position: absolute; right: 100%; top:0; 
 }
