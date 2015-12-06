@@ -3,7 +3,7 @@ function setLikesInfo(info)
 {
     document.getElementById('button').style.display = 'block'; 
     document.getElementById('words').textContent = "Liking!"; 
-  //  document.getElementById('total').textContent = info;  
+
     document.getElementById('button').onclick = function()
     {
        chrome.tabs.query({
@@ -20,16 +20,14 @@ function setLikesInfo(info)
         }); 
     }
 }
-
 //a function for when "Undo" is clicked, displaying how many likes are being unliked.
 function setTest()
 {
     document.getElementById('words').textContent = "Unliking all likes"; 
     document.getElementById('button').style.display = 'none';  
 }
-
-
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', function()
+{
     // send message to contentscript in selected tab
     //document.getElementById('total').textContent = ""; 
     document.getElementById('button').style.display = 'none';
@@ -50,7 +48,6 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-
     //like comments when "Like Comments" is clicked
     document.getElementById('like_comment').onclick = function () 
     {
@@ -67,7 +64,6 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         });  
     }
-    
     //like posts when "Like Posts" is clicked
     document.getElementById('like_post').onclick = function () 
     {
@@ -84,7 +80,6 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-   
     //go to page displaying friend's photos when "Go To Photos" is clicked
     document.getElementById('go_to_photo').onclick = function () 
     {
@@ -101,14 +96,14 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-
     //like photos when "Like Photos" is clicked
     document.getElementById('like_photo').onclick = function () 
     {
-        chrome.tabs.query({
+        chrome.tabs.query(
+        {
         active: true,
         currentWindow: true
-    },
+        },
         function(tabs)
         {
             chrome.tabs.sendMessage(
@@ -118,5 +113,3 @@ window.addEventListener('DOMContentLoaded', function(){
                 );
         }); 
     }
-
-});

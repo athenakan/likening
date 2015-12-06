@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', function()
     {
         chrome.windows.create({'url': 'instructions.html'}); 
     }
-   
 });
 
 //a function to search 
@@ -40,5 +39,6 @@ window.addEventListener('DOMContentLoaded', function()
         }
     });
 });
+
 
 

@@ -7,7 +7,6 @@ body
         text-align: center;
       float: left;
     }
-
 table
 {
   font-family: "Times New Roman", Times, serif;
@@ -26,7 +25,6 @@ table
   -moz-border-radius: 0;
   border-radius: 0;
 }
-
 button
 {
   display: inline-block;
@@ -44,20 +42,19 @@ button
   -moz-border-radius: 0;
   border-radius: 0;
 }
-
-section.flat button {
+section.flat button 
+{
   color: #fff;
   background-color: #6496c8;
   text-shadow: -1px 1px #417cb8;
   border: none;
   cursor: pointer;
   font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-    line-height: 30px;
-        min-width: 150px;
-        font-size: 12px;
-        max-height: 300px; 
-        list-style: none;
-
+  line-height: 30px;
+  min-width: 150px;
+  font-size: 12px;
+  max-height: 300px; 
+  list-style: none;
 }
 section.flat button:hover
 {
@@ -69,77 +66,76 @@ section.flat button:active
   background-color: #27496d;
   text-shadow: -1px 1px #193047;
 }   
-
 nav ul ul 
 {
-     display: none;
+   display: none;
 }
-    nav ul li:hover > ul
-    {
-        display: block;
-    }
-
+nav ul li:hover > ul
+{
+  display: block;
+}
 nav ul 
 {
-    background: #6496c8;
-    padding: 0px 20px;
-    border-radius: 10px;  
-    list-style: none;
-    position: relative;
-    display: inline-table;
+  background: #6496c8;
+  padding: 0px 20px;
+  border-radius: 10px;  
+  list-style: none;
+  position: relative;
+  display: inline-table;
 }
-    nav ul:after
-    {
-        content: ""; clear: both; display: block;
-    }
-
-nav ul li {
-    float: left;
+nav ul:after
+{
+  content: ""; clear: both; display: block;
 }
-    nav ul li:hover
-    {
-        background: #346392;
-        
-    }
-        nav ul li:hover a 
-        {
-            color: #fff; 
-        }
-    nav ul li a 
-    {
-        display: block; padding: 10px 25px;
-        color: #346392; text-decoration: none;
-    }
+nav ul li 
+{
+  float: left;
+}
+nav ul li:hover
+{
+  background: #346392;
+    
+}
+nav ul li:hover a 
+{
+  color: #fff; 
+}
+nav ul li a 
+{
+  display: block; padding: 10px 25px;
+  color: #346392; text-decoration: none;
+}
 nav ul ul 
 {
-    background: #346392; border-radius: 0px; padding: 0;
-    position: absolute; top: 100%;
+  background: #346392; border-radius: 0px; padding: 0;
+  position: absolute; top: 100%;
 }
-    nav ul ul li{
-        float: none; 
-        border-top: 1px solid #417db8;
-        border-bottom: 1px solid #5189c1;
-        position: relative;
-    }
-        nav ul ul li button
-        {
-        color: #fff;
-        background-color: #346392;
-        text-shadow: -1px 1px #417cb8;
-        border: none;
-        cursor: pointer;
-        font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-        min-width: 150px;
-        font-size: 12px;
-        max-height: 300px; 
-        list-style: none;
-        border-top: 1px solid #6b727c;
-        border-bottom: 1px solid #575f6a;
-        }
-            nav ul ul li button:hover
-            {
-                background: #203d5a;
-            }
+nav ul ul li
+{
+  float: none; 
+  border-top: 1px solid #417db8;
+  border-bottom: 1px solid #5189c1;
+  position: relative;
+}
+nav ul ul li button
+{
+  color: #fff;
+  background-color: #346392;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+  min-width: 150px;
+  font-size: 12px;
+  max-height: 300px; 
+  list-style: none;
+  border-top: 1px solid #6b727c;
+  border-bottom: 1px solid #575f6a;
+}
+nav ul ul li button:hover
+{
+    background: #203d5a;
+}
 nav ul ul ul 
 {
   position: absolute; right: 100%; top:0; 
