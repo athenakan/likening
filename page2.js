@@ -1,8 +1,13 @@
-//call back function that sets page2.html
-function setLikesInfo(info)
+// call back function that sets page2.html
+function setLikesInfo()
 {
+    // display undo button
     document.getElementById('button').style.display = 'block'; 
+
+    // display text "Liking!"
     document.getElementById('words').textContent = "Liking!"; 
+
+    // send message when undo button is clicked
     document.getElementById('button').onclick = function()
     {
        chrome.tabs.query({
@@ -19,19 +24,21 @@ function setLikesInfo(info)
         }); 
     }
 }
-//a function for when "Undo" is clicked, displaying how many likes are being unliked.
+
+// When undo is clicked show "unliking all likes" and then hide undo button 
 function setTest()
 {
     document.getElementById('words').textContent = "Unliking all likes"; 
     document.getElementById('button').style.display = 'none';  
 }
+
 window.addEventListener('DOMContentLoaded', function()
 {
-    // send message to contentscript in selected tab
-    //document.getElementById('total').textContent = ""; 
+
+    // hide undo button
     document.getElementById('button').style.display = 'none';
 
-    //like posts and comments when "Like Posts and Comments" is clicked
+    // send message when like comments and posts button is clicked
     document.getElementById('like_button').onclick = function()
     {
        chrome.tabs.query({
@@ -47,7 +54,8 @@ window.addEventListener('DOMContentLoaded', function()
                 );
         }); 
     }
-    //like comments when "Like Comments" is clicked
+
+    // send message when "Like Comments" is clicked
     document.getElementById('like_comment').onclick = function () 
     {
         chrome.tabs.query({
@@ -63,7 +71,7 @@ window.addEventListener('DOMContentLoaded', function()
                 );
         });  
     }
-    //like posts when "Like Posts" is clicked
+    // send message when "Like Posts" is clicked
     document.getElementById('like_post').onclick = function () 
     {
         chrome.tabs.query({
@@ -79,7 +87,7 @@ window.addEventListener('DOMContentLoaded', function()
                 );
         }); 
     }
-    //go to page displaying friend's photos when "Go To Photos" is clicked
+    // send message when "Go To Photos" is clicked
     document.getElementById('go_to_photo').onclick = function () 
     {
         chrome.tabs.query({
@@ -90,12 +98,11 @@ window.addEventListener('DOMContentLoaded', function()
         {
             chrome.tabs.sendMessage(
                 tabs[0].id,
-                {from: 'popup', subject: 'Go To Photos'},
-                setLikesInfo
+                {from: 'popup', subject: 'Go To Photos'}
                 );
         }); 
     }
-    //like photos when "Like Photos" is clicked
+    // send message when "Like Photos" is clicked
     document.getElementById('like_photo').onclick = function () 
     {
         chrome.tabs.query(
