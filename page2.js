@@ -3,7 +3,6 @@ function setLikesInfo(info)
 {
     document.getElementById('button').style.display = 'block'; 
     document.getElementById('words').textContent = "Liking!"; 
-
     document.getElementById('button').onclick = function()
     {
        chrome.tabs.query({
@@ -113,3 +112,4 @@ window.addEventListener('DOMContentLoaded', function()
                 );
         }); 
     }
+});

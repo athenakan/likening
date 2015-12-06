@@ -12,9 +12,11 @@ function openSearchResult()
     window.location.href = "page2.html"; 
     chrome.tabs.executeScript({code: "document.getElementsByClassName('_gll')[0].firstChild.click();", runAt: "document_idle"});
 }
+
 window.addEventListener('DOMContentLoaded', function()
 {
-//allow "Enter" on the keyboard to be pressed instead of clicking "Search"
+
+    //allow "Enter" on the keyboard to be pressed instead of clicking "Search"
     document.getElementById('submit').addEventListener('keypress', function(event) 
     {
         if (event.keyCode == 13) 
@@ -29,6 +31,7 @@ window.addEventListener('DOMContentLoaded', function()
     {
         var input1= document.getElementById('input1').value;
         chrome.tabs.update({url: "https://facebook.com/search/top/?q="+input1});
+
     });
 
     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) 
@@ -38,7 +41,5 @@ window.addEventListener('DOMContentLoaded', function()
             openSearchResult();
         }
     });
+
 });
-
-
-
