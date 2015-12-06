@@ -103,7 +103,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response)
                 count++; 
             }
         }
-        response(count); 
+        response(); 
         return true; 
     }
 
