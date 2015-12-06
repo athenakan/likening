@@ -5,9 +5,14 @@
     "version": "1",
     "description": "CS50 final project",
     "browser_action": {
-        "default_icon": "icon.png",
+        "default_icon": "icon16.png",
         "default_title": "Click here to like posts!",
         "default_popup": "popup.html"
+    },
+    "icons": 
+    {
+        "16": "icon16.png",
+        "128": "icon128.png"
     },
     "permissions": [
         "activeTab",
