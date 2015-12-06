@@ -1,4 +1,4 @@
-button {
+button, a {
   display: inline-block;
   margin: 0 10px 0 0;
   padding: 5px 25px;
@@ -15,8 +15,9 @@ button {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  text-decoration: none;
 }
-section.flat button {
+section.flat button, section.flat a {
   color: #fff;
   background-color: #6496c8;
   text-shadow: -1px 1px #417cb8;
@@ -24,7 +25,8 @@ section.flat button {
   cursor: pointer;
 
 }
-section.flat button:hover
+section.flat button:hover,
+section.flat a:hover
 {
   background-color: #346392;
   text-shadow: -1px 1px #27496d;

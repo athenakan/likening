@@ -1,4 +1,5 @@
 var likeall = []; 
+var count = [];
 chrome.runtime.onMessage.addListener(function(msg, sender, response){
     if ((msg.from === 'popup') && (msg.subject === 'Like Posts and Comments'))
     {
@@ -38,7 +39,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
             var likes = []; 
            // var likeall = []; 
             likeall = []; 
-            var count = 0; 
+            count = 0; 
             for (var i = 0; i < like.length; i++)
             {
                 if (like[i] && like[i].title == 'Like this comment')
@@ -57,16 +58,18 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
                 }
             }
             cliking(likes);
-            response(count);
-            return true;
+           // response(count);
         }, 500);
+    response(count);
+    return true;
+    
     }
     else if ((msg.from === 'popup') && (msg.subject === 'Like Comments'))
     {
         var like = document.getElementsByTagName('a'); 
         var likecomments = []; 
         likeall = []; 
-        var count = 0; 
+        count = 0; 
         for (var i = 0; i < like.length; i++)
         {
             if (like[i] && like[i].title == 'Like this comment')
@@ -87,7 +90,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
         var like = document.getElementsByTagName('a'); 
         var likeposts = []; 
         likeall = []; 
-        var count = 0; 
+        count = 0; 
         for (var i = 0; i < like.length; i++)
         {
             if (like[i] && like[i].getAttribute("aria-label") == 'Like this')
@@ -118,7 +121,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response){
         var like = document.getElementsByTagName('a'); 
         var likeposts = []; 
         likeall = []; 
-        var count = 0; 
+        count = 0; 
         
         for (var i = 0; i < like.length; i++)
         {

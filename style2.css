@@ -1,13 +1,10 @@
 body 
     {
       display: inline-block;
-      min-width: 300px;
+      min-width: 500px;
         background: #fefefe;
         font-size: 13px;
-        max-height: 300px;
-        margin-left: 6px;
-        margin-right: -80px;
-        text-align: left;
+        text-align: center;
       float: left;
     }
 
