@@ -1,0 +1,22 @@
+Download and unzip a copy of the folder “likening” that contains the following files: 
+content.js 
+design.txt
+document.txt
+icon16.png
+icon128.png
+instructions.html
+jquery-1.11.3.js
+manifest.json
+page2.html
+page2.js
+popup.html
+popup.js
+style.css
+style2.css
+
+Save this folder to a known directory. Then in chrome go to “chrome://extensions” and check “Developer mode” in the top right corner if not checked already. Under the Extensions title click the “Load unpacked extensions” and navigate to the likening folder. Click okay. You should now see a new extension with title “Facebook Auto-Like.” In the top right corner of the browser, you should see a new extension icon that is a thumbs up with CS50 inside it. Click the icon to get started! 
+You should see a page with a search bar, “Change page” button, and “Instructions” button. Click 
+“Instructions” to see how the extension works. Then, type your friend’s name in the search bar and click enter or the “Search” button. You should be redirected to your friend’s timeline on Facebook. Alternatively, you can manually go to your friend’s timeline on Facebook and then click the “Change Page” button. Either way, you should now see a new html page in the extension with two buttons: “Like” and “Go back.” Go back takes you to the first page with the search bar. Hover on “Like” and you should see a list of options: “Like Posts,” “Like Comments,” “Like Posts and Comments,” and “Like Photos.” Clicking one will like the corresponding posts/comments/photos. It will also show a new button, called “Undo” that allows you to unlike everything you just liked. Hovering on “Like Photos” will show two more buttons: “Go to Photos” and “Like Photos.” Click the former to go to your friend’s photo page and then click the latter to like all of the photos. 
+Note that this extension likes all of the posts/comments/photos that are currently loaded on the page. If you want to like older elements, scroll down on Facebook to load the elements and go ahead and like them. 
+
+DISCLAIMER: overuse of this extension may lead to temporary ban from Facebook. Use with caution. 
