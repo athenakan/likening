@@ -70,7 +70,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response)
             {
                 for (var i = 0; i < like.length; i++)
                 {
-                    if (like[i] && like[i].getAttribute("aria-label") == 'Like this')
+                    if (like[i] && like[i].getAttribute("data-testid") == 'fb-ufi-likelink')
                     {
                         like[i].click();
                         likeall[count] = like[i];
