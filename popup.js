@@ -15,7 +15,7 @@ function openSearchResult()
     window.location.href = "page2.html"; 
 
     // click on first result
-    chrome.tabs.executeScript({code: "document.getElementsByClassName('_gll')[0].firstChild.click();", runAt: "document_idle"});
+    chrome.tabs.executeScript({code: "document.getElementsByClassName('_5d-5')[0].click();", runAt: "document_idle"});
 }
 
 window.addEventListener('DOMContentLoaded', function()
