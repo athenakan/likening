@@ -1,35 +1,34 @@
 {
-    "manifest_version": 2,
+	"manifest_version": 2,
 
-    "name": "Facebook Auto-like",
-    "version": "1",
-    "description": "CS50 final project",
-    "browser_action": {
-        "default_icon": "icon16.png",
-        "default_title": "Click here to like posts!",
-        "default_popup": "popup.html"
-    },
-    "icons": 
-    {
-        "16": "icon16.png",
-        "128": "icon128.png"
-    },
-    "permissions": [
-        "activeTab",
-        "http://*/*",
-        "https://*/*",
-        "tabs"
-    ],
-    "content_scripts": [
-        {
-            "matches": [
-                "http://*/*",
-                "https://*/*"
-            ],
-          //  "run_at": "document_idle",
-            "js": [
-                "content.js"
-            ]
-        }
-    ]
+	"name": "Facebook Auto-like",
+	"version": "1.3",
+	"description": "CS50 final project",
+	"browser_action": {
+		"default_icon": "icon16.png",
+		"default_title": "Click here to like posts!",
+		"default_popup": "popup.html"
+	},
+	"icons":
+	{
+		"16": "icon16.png",
+		"128": "icon128.png"
+	},
+	"permissions": [
+		"activeTab",
+		"http://*/*",
+		"https://*/*",
+		"tabs"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
+			"js": [
+				"content.js"
+			]
+		}
+	]
 }
